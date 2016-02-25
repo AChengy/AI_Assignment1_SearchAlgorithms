@@ -1,0 +1,35 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ASSIGNMENT 1 README~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Alex Chengelis
+2632220
+
+I worked with Andrew Yu on some parts of this assignment. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~IMPLEMENTATION OF PROGRAM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The search algorithms themselves were pretty starightforward. I was able to get them to do the
+expansion of all the nodes properly but it wasn't backtracking. I talked to Mike and he gave me
+the idea to keep all the paths on the frontier once I did that all the problems were gone. A* I
+also had to switch a location of where I was assigning the path value for it to work.
+
+For the four corners search I originally tried to keep a list of all the found corners globally
+however I couldn't seem to get that to work properly. So I used the same general idea from the
+search algorithm and attached the found corners list to each node that was being sent. 
+
+The corners Heurisitc is just finding the smallest manhattan distance through all 4 corners. I
+return the total cost of the shortest path. 
+
+Food heurisitic. I just could not come up with a Heurisitc that was admissable. I tried using the
+same one I used for corners except for the corners it was the closest food. This resulted in a 
+pacman that would eat all the food however it wasn't admissable. After that I tried using the
+total cost of the path that would eat the food with the smallest average distance to all the other
+foods. Then I tried using the path that would go to the food with the lowest manhattan distance
+to all the other foods and the current point to that food. 
+
+For the suboptimal search I just used the framework that was already in place. It now just chose
+the closest food by manhattan distance. The goal state is just checking to make sure the node 
+being tested is equal to the closest food. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HOURS SPENT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Roughly 20 hours. A not insignificant part of that was spent on just learning the pacman framework
+I also spent a lot of time of the Food Heurisitic coming up with different cases and writing 
+implemenations. 
